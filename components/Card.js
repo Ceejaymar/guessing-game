@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { setRecoveryProps } from 'expo/build/ErrorRecovery/ErrorRecovery';
 
 const Card = ({ children, style }) => {
   return (

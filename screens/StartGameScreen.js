@@ -58,7 +58,8 @@ const StartGameScreen = () => {
               <Button
                 title='confirm'
                 color={colors.primary}
-                onPress={confirmInputHandler} />;
+                onPress={confirmInputHandler}
+              />
             </View>
           </View>
         </Card>
