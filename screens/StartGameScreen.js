@@ -6,7 +6,7 @@ import Card from '../components/Card';
 import Input from '../components/Input';
 import NumberContainer from '../components/NumberContainer';
 
-const StartGameScreen = () => {
+const StartGameScreen = ({ onStartGame }) => {
   const [enteredValue, setEnteredValue] = useState('');
   const [userConfirmed, setUserConfirmed] = useState(false);
   const [selectedNumber, setSelectedNumber] = useState();
@@ -48,7 +48,7 @@ const StartGameScreen = () => {
         <NumberContainer>
           {selectedNumber}
         </NumberContainer>
-        <Button title="START GAME" />
+        <Button title="START GAME" onPress={() => onStartGame(selectedNumber)} />
       </Card>
     )
   }
