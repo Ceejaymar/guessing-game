@@ -5,6 +5,8 @@ import colors from '../constants/colors';
 import Card from '../components/Card';
 import Input from '../components/Input';
 import NumberContainer from '../components/NumberContainer';
+import TitleText from '../components/TitleText';
+import MainButton from '../components/MainButton';
 
 const StartGameScreen = ({ onStartGame }) => {
   const [enteredValue, setEnteredValue] = useState('');
@@ -48,7 +50,9 @@ const StartGameScreen = ({ onStartGame }) => {
         <NumberContainer>
           {selectedNumber}
         </NumberContainer>
-        <Button title="START GAME" onPress={() => onStartGame(selectedNumber)} />
+        <MainButton onPress={() => onStartGame(selectedNumber)}>
+          START GAME
+        </MainButton>
       </Card>
     )
   }
@@ -56,7 +60,7 @@ const StartGameScreen = ({ onStartGame }) => {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.screen}>
-        <Text style={styles.title}>Start a new game</Text>
+        <TitleText style={styles.title}>Start a new game</TitleText>
         <Card style={styles.inputContainer}>
           <Text>Select a number</Text>
           <Input
@@ -70,14 +74,14 @@ const StartGameScreen = ({ onStartGame }) => {
           <View style={styles.buttonContainer}>
             <View style={styles.button}>
               <Button
-                title='reset'
+                title='Reset'
                 color={colors.secondary}
                 onPress={resetInputHandler}
               />
             </View>
             <View style={styles.button}>
               <Button
-                title='confirm'
+                title='Confirm'
                 color={colors.primary}
                 onPress={confirmInputHandler}
               />
@@ -97,8 +101,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 20,
-    marginVertical: 10
+    marginVertical: 10,
   },
   inputContainer: {
     width: 300,
